@@ -54,3 +54,14 @@ def test_fibo2():
     assert resultlst[8] == 21, "Invalid value "
     assert resultlst[9] == 34, "Invalid value "
     assert resultlst[10] == 55, "Invalid value "
+
+
+def test_yield():
+    with open('main.py') as f:
+        flag = False
+        for line in f:
+            if 'yield' in line:
+                flag = True
+                break
+
+    assert flag == True
