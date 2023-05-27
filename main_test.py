@@ -1,5 +1,6 @@
 import random
 import main
+import types
 
 
 def test_main():
@@ -23,13 +24,9 @@ def test_main():
         print(v, end=' ')
     print()
 
+    assert isinstance(gen, types.GeneratorType), 'Return value is not a generator'
     assert len(resultlst) == 6, "Wrong number of elements"
-    assert resultlst[0] == 0, "Invalid value "
-    assert resultlst[1] == 1, "Invalid value "
-    assert resultlst[2] == 1, "Invalid value "
-    assert resultlst[3] == 2, "Invalid value "
-    assert resultlst[4] == 3, "Invalid value "
-    assert resultlst[5] == 5, "Invalid value "
+    assert resultlst == [0, 1, 1, 2, 3, 5]
 
 
 def test_fibo2():
@@ -42,18 +39,9 @@ def test_fibo2():
         print(v, end=' ')
     print()
 
+    assert isinstance(gen, types.GeneratorType), 'Return value must be generator'
     assert len(resultlst) == 11, "Wrong number of elements"
-    assert resultlst[0] == 0, "Invalid value "
-    assert resultlst[1] == 1, "Invalid value "
-    assert resultlst[2] == 1, "Invalid value "
-    assert resultlst[3] == 2, "Invalid value "
-    assert resultlst[4] == 3, "Invalid value "
-    assert resultlst[5] == 5, "Invalid value "
-    assert resultlst[6] == 8, "Invalid value "
-    assert resultlst[7] == 13, "Invalid value "
-    assert resultlst[8] == 21, "Invalid value "
-    assert resultlst[9] == 34, "Invalid value "
-    assert resultlst[10] == 55, "Invalid value "
+    assert resultlst == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 
 
 def test_yield():
