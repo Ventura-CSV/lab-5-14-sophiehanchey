@@ -9,6 +9,9 @@ def fibo(N):
         yield n1
         yield n2
     else:
+        yield n1
+        yield n2
+        
         # generate remainder of fibonacci sequence past 1
         c = 0
         while c <= N-2:
