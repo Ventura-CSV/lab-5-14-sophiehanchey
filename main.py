@@ -21,8 +21,8 @@ def fibo(N):
 def main():
     N = 16
     gen = fibo(N)
-    # for v in gen:
-    #     print(v, end=' ')
+    for v in gen:
+         print(v, end=' ')
     print(list(gen))
 
 
