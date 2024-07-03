@@ -3,20 +3,22 @@ def fibo(N):
     n1 = 0
     n2 = 1
     
-    #yield n1 and n2
-    yield n1
-    yield n2
-    
-    # generate remainder of fibonacci sequence
-    c = 0
-    while c <= N-2:
-        n3 = n1 + n2
-        yield n3
+    if N == 0:
+        yield n1
+    elif N == 1:
+        yield n1
+        yield n2
+    else:
+        # generate remainder of fibonacci sequence past 1
+        c = 0
+        while c <= N-2:
+            n3 = n1 + n2
+            yield n3
         
-        # update values
-        n1 = n2
-        n2 = n3
-        c += 1
+            # update values
+            n1 = n2
+            n2 = n3
+            c += 1
 
 def main():
     N = 16
