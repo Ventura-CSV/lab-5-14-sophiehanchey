@@ -1,28 +1,25 @@
 def fibo(N):
-    # define n1 and n2
+    # define values for start and incrementation
+    c = 0
     n1 = 0
     n2 = 1
-    
-    if N == 0:
-        yield n1
-    elif N == 1:
-        yield n1
-        yield n2
-    else:
-        yield n1
-        yield n2
-        
-        # generate remainder of fibonacci sequence past 1
-        c = 0
-        while c <= N-2:
+    while c <= N:
+        if c == 0:
+            yield 0
+        elif c == 1:
+            yield 1
+        else:
             n3 = n1 + n2
             yield n3
-        
-            # update values
+            
+            # update fibbonacci specific values
             n1 = n2
             n2 = n3
-            c += 1
-
+            
+        # update overall count
+        c += 1   
+            
+            
 def main():
     N = 16
     gen = fibo(N)
